@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" type="text/css" href="Frontal.css"> -->
+    <title>Principal</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            background-color: blueviolet;
+        }
+        button {
+            height: 60%;
+            padding: 0;
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0px;
+            border-radius: .5em;
+            background: white;
+
+            -webkit-transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+            transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+        }
+        button:hover {
+            box-shadow: 0 0 40px 40px #450b4b inset;
+        }
+        textarea {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 1.5em;
+            background-color: white;
+            overflow-y: scroll;
+            resize: none;
+        }
+        #principal {
+            width: 1200px;
+            height: 1000px;
+            background: #D8D8D8;
+            margin: 0.5em auto;
+            padding: 0.5em;
+            border-radius: 1em;
+        }
+        #header {
+            height: 10%;
+            background: red;
+            border-radius: 1em;
+        }
+        #nav {
+            height: 10%;
+            background: yellow;
+            border-radius: 1em;
+        }
+        #contenido {
+            height: 80%;
+            background: #FFFFFF;
+            border-radius: 1em;
+        }
+        #entrada {
+            float: left;
+            width: 50%;
+            background: green;
+            height: 100%;
+            border-radius: 1em;
+        }
+        #salida {
+            float: right;
+            width: 50%;
+            height: 100%;
+            background: #a4a4a4;
+            border-radius: 1em;
+        }
+        #enviar {
+            background: green;
+        }
+        #reset {
+            background: red;
+        }
+    </style>
+<!-- AGREGAR JQUERY -->
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+
+<body>
+    <div id='principal'>
+
+        <div id="header">
+            
+            <button>Peticiones</button>
+            <button>Ayuda</button>
+        </div>
+        <div id="nav">
+
+            <input id="ruta" style="font-size: large;" type="file">
+            <button onclick="enviar()" id="enviar">Enviar</button>
+            <button onclick="" id="reset">Reset</button>
+            
+        </div>
+        <div id="contenido">
+
+            <div id="entrada">
+                <textarea name="" id="textArea1" cols="70" rows="50"></textarea>
+            </div>
+            
+            <div id="salida">
+                <textarea name="" id="textArea2" cols="70" rows="50">{{valor.valor}}</textarea>
+            </div>
+
+            </form>
+        </div>
+    </div>
+</body>
+</html>

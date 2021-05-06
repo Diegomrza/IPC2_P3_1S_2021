@@ -6,3 +6,6 @@ class evento:
         self.codigo_error = codigo_error
         self.usuarios_afectados = []
         self.cantidad_mensajes_usuario = 0
+    
+    def sumar(self):
+        self.cantidad_mensajes_usuario+=1

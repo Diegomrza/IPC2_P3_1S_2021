@@ -15,12 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from misitio.views import saludo, despedida, home, fecha_actual
+from myapp import views
 
 urlpatterns = [
+    path('', views.index),
     path('admin/', admin.site.urls),
-    path('home/', home),
-    path('saludo/', saludo),
-    path('despedirse/', despedida),
-    path('fecha/', fecha_actual)
+    path('enviar/', views.enviar, name='enviar'),
+    path('reset/', views.reset, name='reset')
 ]
