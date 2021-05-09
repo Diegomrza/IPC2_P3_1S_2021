@@ -20,6 +20,6 @@ from myapp import views
 urlpatterns = [
     path('', views.index),
     path('admin/', admin.site.urls),
-    path('enviar/', views.enviar, name='enviar'),
-    path('reset/', views.reset, name='reset')
+    path('enviar/', views.enviar),
+    path('reset/', views.reset)
 ]

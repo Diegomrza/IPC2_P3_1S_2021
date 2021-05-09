@@ -1,7 +1,5 @@
 from django import forms
 
 class prueba(forms.Form):
-    dato = forms.CharField(widget=forms.Textarea(), label='textArea2')
-    enviar = forms.CharField(widget=forms.Textarea(), label='textArea1')
-    
-    
+    textArea2 = forms.CharField(widget=forms.Textarea(), label='textArea2')
+    textArea1 = forms.CharField(widget=forms.Textarea(), label='textArea1')

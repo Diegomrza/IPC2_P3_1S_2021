@@ -7,7 +7,7 @@ import xml.etree.ElementTree as ET #ElementTree
 
 from Eventos import evento #Clase eventos
 from Fechas import EventosPorFechas
-from usuarios import usuario
+from usuarios import usuario, error
 
 #Listas
 listaEventos = []
@@ -73,16 +73,21 @@ def lectura():
 
 #Fin Obsoleto
 
+
+#Si el archivo xml viene con errores el método truena
 @app.route('/ingreso', methods=['POST'])
 def ingresar_datos():
     global listaEventos, listaFechas, eventoxfecha
-    #Fecha, Correo, Codigo error,Usuarios afectados, Descripción
-    datos = fromstring(request.data)
 
-    prueba = request.data.decode('utf-8')
-    print(prueba)
+    # C:\Users\Squery\Documents\GitHub\IPC2_Proyecto3_201901429\Backend\entrada1.xml
 
-    print(datos)
+    if request.json != None:
+        ruta = request.json['ruta']
+        print(ruta)
+        tree = ET.parse(r'C:\Users\Squery\Documents\GitHub\IPC2_Proyecto3_201901429\Backend\\'+ruta)
+        datos = tree.getroot()
+    else:
+        datos = fromstring(request.data)
 
     for x in datos:
         #Fecha--------------------------------------------------------------------------
@@ -128,6 +133,7 @@ def ingresar_datos():
             if fecha == event.fecha:
                 nuevaFecha.eventos.append(event)
                 nuevaFecha.cantidad_mensajes+=1
+                
                 for af in event.usuarios_afectados:
                     if len(usersAfectados) == 0:
                         usersAfectados.append(af)
@@ -136,11 +142,13 @@ def ingresar_datos():
                     elif af not in usersAfectados:
                         usersAfectados.append(af)
 
-        print('Fecha: - ',nuevaFecha.fecha,'Usuarios afectados corregido: \n', usersAfectados)
+        #print('Fecha: - ',nuevaFecha.fecha,'Usuarios afectados corregido: \n', usersAfectados)
         nuevaFecha.usuarios_afectados = usersAfectados
+        
         eventoxfecha.append(nuevaFecha)
     
     return '''<CONFIRMAR>Datos leídos correctamente</CONFIRMAR>'''
+
 
 @app.route('/consulta')
 def consultar_datos():
@@ -148,10 +156,12 @@ def consultar_datos():
 
     xml = '<ESTADISTICAS>\n'
     for fecha in eventoxfecha:
-        xml += '<ESTADISTICA>\n'#
-        xml += '<FECHA>'+fecha.fecha+'</FECHA>\n'
-        xml += '<CANTIDAD_MENSAJES>'+str(fecha.cantidad_mensajes)+'</CANTIDAD_MENSAJES>\n'
-        xml += '<REPORTADO_POR>\n'#
+        xml += '\t<ESTADISTICA>\n'#
+        xml += '\t\t<FECHA>'+fecha.fecha+'</FECHA>\n'
+        xml += '\t\t<CANTIDAD_MENSAJES>'+str(fecha.cantidad_mensajes)+'</CANTIDAD_MENSAJES>\n'
+        
+        ##########################
+        xml += '\t\t<REPORTADO_POR>\n'
         listaUsuarios = []
         for x in fecha.eventos:
             bandera = False
@@ -159,7 +169,6 @@ def consultar_datos():
                 objeto = usuario(x.correo)
                 listaUsuarios.append(objeto)
             else:
-                
                 for y in range(0, len(listaUsuarios)):
                     if x.correo == listaUsuarios[y].correo:
                         listaUsuarios[y].cantidad_mensajes_usuario+=1
@@ -169,54 +178,68 @@ def consultar_datos():
                     listaUsuarios.append(objeto)
 
         for z in range(0, len(listaUsuarios)):
-            xml += '<USUARIO>\n'
-            xml += '<EMAIL>' + listaUsuarios[z].correo+ '</EMAIL>\n'
-            xml += '<CANTIDAD_MENSAJES>'+str(listaUsuarios[z].cantidad_mensajes_usuario)+'</CANTIDAD_MENSAJES>\n'
-            xml += '</USUARIO>\n'
-        xml += '</REPORTADO_POR>\n'
-
-        xml += '<AFECTADOS>\n'#
+            xml += '\t\t\t<USUARIO>\n'
+            xml += '\t\t\t\t<EMAIL>' + listaUsuarios[z].correo+ '</EMAIL>\n'
+            xml += '\t\t\t\t<CANTIDAD_MENSAJES>'+str(listaUsuarios[z].cantidad_mensajes_usuario)+'</CANTIDAD_MENSAJES>\n'
+            xml += '\t\t\t</USUARIO>\n'
+        ########################
+        xml += '\t\t</REPORTADO_POR>\n'
+        xml += '\t\t<AFECTADOS>\n'#
         for afectados in fecha.usuarios_afectados:
-            xml += '<AFECTADO>'+afectados+'</AFECTADO>\n'
-        xml += '</AFECTADOS>\n'
-        
-        xml += '</ESTADISTICA>\n'   
+            xml += '\t\t\t<AFECTADO>'+afectados+'</AFECTADO>\n'
+        xml += '\t\t</AFECTADOS>\n'
+        ##################
+        xml += '\t\t<ERRORES>\n'
+        listaErrores = []
+        for err in fecha.eventos:
+            flag = False
+            if len(listaErrores) == 0:
+                objeto1 = error(err.codigo_error)
+                listaErrores.append(objeto1)
+            else:
+                for i in range(0, len(listaErrores)):
+                    if err.codigo_error == listaErrores[i].codigo_error:
+                        listaErrores[i].cantidad_veces_error += 1
+                        flag = True
+                if flag == False:
+                    objeto1 = error(err.codigo_error)
+                    listaErrores.append(objeto1)
+        for e in listaErrores:
+            xml += '\t\t\t<ERROR>\n'
+            xml += '\t\t\t\t<CODIGO>'+e.codigo_error+'</CODIGO>\n'
+            xml += '\t\t\t\t<CANTIDAD_MENSAJES>'+str(e.cantidad_veces_error)+'</CANTIDAD_MENSAJES>\n'
+            xml += '\t\t\t</ERROR>\n'
+        xml += '\t\t</ERRORES>\n'
+        ##################
+        xml += '\t</ESTADISTICA>\n'#   
     xml += '</ESTADISTICAS>'
-
-    return jsonify({'valor':xml})
+    #return jsonify({'valor':xml})      
     #return xmltodict.parse(xml)
-    #return xml
+    estadistica = open(r'C:\Users\Squery\Documents\GitHub\IPC2_Proyecto3_201901429\Backend\estadisticas.xml','w')
+    estadistica.write(xml)
+    estadistica.close()
+    return xml
 
 @app.route('/FFU', methods=['POST'])
 def filtrar_info_por_fecha_y_usuario():
+
+
+
     pass
 
 @app.route('/FFC',methods=['POST'])
 def filtrar_por_fecha_y_codigo_de_error():
+
+
     pass
 
-@app.route('/prueba', methods=['GET'])
-def prueba():
-    xml = '<ESTADISTICAS>\n'
-
-    for x in range(0, 10):
-        xml += '<ESTADISTICA>\n'
-        for y in range(0, 5):
-            xml += '\t<USUARIO>'+str(x)+'</USUARIO>\n'
-        xml += '</ESTADISTICA>\n'
-    xml += '</ESTADISTICAS>'
-    print(xml)
-    datos = {
-        'valor': xml
-    }
-    return jsonify(datos)
-
 @app.route('/prueba', methods=['POST'])
-def prueba2():
+def prueba():
 
-    ruta = request.json['ruta']
-    print(ruta)
-    return jsonify({'message':'simon'})
+
+
+
+    pass
 
 if __name__ == '__main__':
     app.run(threaded = True,port = 4000, debug = True)

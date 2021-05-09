@@ -90,29 +90,48 @@
     <div id='principal'>
 
         <div id="header">
-            
             <button>Peticiones</button>
             <button>Ayuda</button>
         </div>
         <div id="nav">
 
+
             <input id="ruta" style="font-size: large;" type="file">
-            <button onclick="enviar()" id="enviar">Enviar</button>
-            <button onclick="" id="reset">Reset</button>
+
+            <form action="/enviar/" method="POST">
+                {% csrf_token %}
+                <button type="submit" id="enviar">Enviar</button>
+            </form>
+            
+            <form action="/reset/">
+                {% csrf_token %}
+                <button type="submit" id="reset">Reset</button>
+            </form>
             
         </div>
         <div id="contenido">
-
-            <div id="entrada">
-                <textarea name="" id="textArea1" cols="70" rows="50"></textarea>
-            </div>
+            <form action="/enviar/" method="POST">
+                {% csrf_token %}
+                <div id="entrada">
+                    <textarea name="textArea1" id="textArea1" cols="70" rows="50"></textarea>
+                </div>
             
-            <div id="salida">
-                <textarea name="" id="textArea2" cols="70" rows="50">{{valor.valor}}</textarea>
-            </div>
+                <div id="salida">
+                    <textarea name="textArea2" id="textArea2" cols="70" rows="50">{{valor.valor}}</textarea>
+                </div>
 
+            </form>
+            
             </form>
         </div>
     </div>
+
+    <script>
+
+
+
+    </script>
+
+
 </body>
 </html>

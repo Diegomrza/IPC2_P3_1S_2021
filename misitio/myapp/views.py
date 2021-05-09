@@ -15,12 +15,17 @@ def prueba(request):
     pass
 
 def enviar(request):
-    response = requests.post(endpoint+'ingreso')
+    contexto = {}
+
+    form = prueba(request.GET)
+    texto = form.cleaned_data['textArea1']
+    print(texto)
+
+    response = requests.post(endpoint+'prueba')
+    contexto['ruta'] = texto
 
     valor = response.json()
-    contexto = {
-        'valor' : valor
-    }
+    
     return render(request, 'Frontal.html', contexto)
 
 def reset(request):
