@@ -1,12 +1,132 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Principal</title>
+    <title>Peticiones</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            /*background-color: blueviolet;*/
+        }
+        body{
+            background-image: url(https://i.pinimg.com/originals/0c/94/1d/0c941d8e13f5c6560d94b9d9a1b24094.jpg);
+            height: 100%;
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        h3{
+            font-size: 30px;
+            margin-left: 200px;
+            color: white;
+        }
+        button {
+            height: 60%;
+            padding: 0;
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0px;
+            border-radius: .5em;
+            
+            -webkit-transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+            transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+        }
+        button:hover {
+            box-shadow: 0 0 40px 40px #450b4b inset;
+        }
+        textarea {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 1.5em;
+            
+            overflow-y: scroll;
+            resize: none;
+        }
+        #principal {
+            width: 1200px;
+            height: 1000px;
+            
+            margin: 0.5em auto;
+            padding: 0.5em;
+            border-radius: 1em;
+        }
+        #header {
+            height: 10%;
+            background: lightgray;
+            border-radius: 1em;
+        }
+        #nav {
+            height: 10%;
+            /*background: yellow;*/
+            border-radius: 1em;
+        }
+        #contenido {
+            height: 80%;
+            /*background: #FFFFFF;*/
+            border-radius: 1em;
+        }
+        #entrada {
+            float: left;
+            width: 50%;
+            
+            height: 100%;
+            border-radius: 1em;
+        }
+        #salida {
+            float: right;
+            width: 50%;
+            height: 100%;
+            
+            border-radius: 1em;
+        }
+        #enviar {
+            background: green;
+            float: left;
+            margin-left: 200px;
+            width: 100px;
+        }
+        #reset {
+            background: red;
+            float: right;
+            margin-right: 200px;
+            width: 100px;
+        }
+    </style>
+
 </head>
+
 <body>
-    <h1>Hola que tal</h1>
+    <div id='principal'>
+        <div id="header">
+            <a href="FFU.html">
+                <button style="float: left; margin-left: 250px; margin-top: 20px;">
+                    Filtrar información por fecha y usuario que reporta            
+                </button>
+            </a>
+            
+            <a href="FFC.html">
+                <button style="float: left; margin-top: 20px;">
+                    Filtrar por fecha y código de error
+                </button>
+            </a>
+            
+        </div>
+        
+    </div>
+    
+    <script>
+        
+
+    </script>
+
+
 </body>
 </html>

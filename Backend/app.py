@@ -5,9 +5,16 @@ from xml.etree.ElementTree import XML, fromstring #Para parsear a xml
 import xmltodict #archivo xml a diccionario
 import xml.etree.ElementTree as ET #ElementTree
 
+
+import matplotlib.pyplot as plt
+
+
 from Eventos import evento #Clase eventos
 from Fechas import EventosPorFechas
 from usuarios import usuario, error
+
+app = Flask(__name__)
+cors = CORS(app, resources={r"/*": {"origin":"*"}})
 
 #Listas
 listaEventos = []
@@ -15,14 +22,9 @@ listaFechas = []
 eventoxfecha = []
 #listaUsuarios = []
 
-#listas obsoletas
 eventos = []
 fechas = []
 eventos_por_fecha = []
-
-
-app = Flask(__name__)
-CORS(app)
 
 @app.route('/')
 def index():
@@ -147,8 +149,18 @@ def ingresar_datos():
         
         eventoxfecha.append(nuevaFecha)
     
-    return '''<CONFIRMAR>Datos leídos correctamente</CONFIRMAR>'''
+    return jsonify({
+        'valor':'Correcto'
+    })
 
+
+@app.route('/consultaFechas')
+def consultaFechas():
+    global listaFechas
+
+    return jsonify({
+        'valor': listaFechas
+    })
 
 @app.route('/consulta')
 def consultar_datos():
@@ -160,7 +172,6 @@ def consultar_datos():
         xml += '\t\t<FECHA>'+fecha.fecha+'</FECHA>\n'
         xml += '\t\t<CANTIDAD_MENSAJES>'+str(fecha.cantidad_mensajes)+'</CANTIDAD_MENSAJES>\n'
         
-        ##########################
         xml += '\t\t<REPORTADO_POR>\n'
         listaUsuarios = []
         for x in fecha.eventos:
@@ -182,13 +193,13 @@ def consultar_datos():
             xml += '\t\t\t\t<EMAIL>' + listaUsuarios[z].correo+ '</EMAIL>\n'
             xml += '\t\t\t\t<CANTIDAD_MENSAJES>'+str(listaUsuarios[z].cantidad_mensajes_usuario)+'</CANTIDAD_MENSAJES>\n'
             xml += '\t\t\t</USUARIO>\n'
-        ########################
+        
         xml += '\t\t</REPORTADO_POR>\n'
         xml += '\t\t<AFECTADOS>\n'#
         for afectados in fecha.usuarios_afectados:
             xml += '\t\t\t<AFECTADO>'+afectados+'</AFECTADO>\n'
         xml += '\t\t</AFECTADOS>\n'
-        ##################
+        
         xml += '\t\t<ERRORES>\n'
         listaErrores = []
         for err in fecha.eventos:
@@ -210,36 +221,123 @@ def consultar_datos():
             xml += '\t\t\t\t<CANTIDAD_MENSAJES>'+str(e.cantidad_veces_error)+'</CANTIDAD_MENSAJES>\n'
             xml += '\t\t\t</ERROR>\n'
         xml += '\t\t</ERRORES>\n'
-        ##################
+        
         xml += '\t</ESTADISTICA>\n'#   
     xml += '</ESTADISTICAS>'
-    #return jsonify({'valor':xml})      
-    #return xmltodict.parse(xml)
+    
     estadistica = open(r'C:\Users\Squery\Documents\GitHub\IPC2_Proyecto3_201901429\Backend\estadisticas.xml','w')
     estadistica.write(xml)
     estadistica.close()
-    return xml
+    #return jsonify({'valor':xml})      
+    #return xmltodict.parse(xml)
+    #return xml
+    return jsonify({
+        'valor':xml
+        })
 
 @app.route('/FFU', methods=['POST'])
 def filtrar_info_por_fecha_y_usuario():
+    global listaEventos, listaFechas, eventoxfecha
 
+    fechaP = request.json['opcion']
+    print(fechaP)
 
+    listaUsuarios = []
+    for fecha in eventoxfecha:
+        if fecha.fecha == fechaP:
+            for x in fecha.eventos:
+                bandera = False
+                if len(listaUsuarios) == 0:
+                    objeto = usuario(x.correo)
+                    listaUsuarios.append(objeto)
+                else:
+                    for y in range(0, len(listaUsuarios)):
+                        if x.correo == listaUsuarios[y].correo:
+                            listaUsuarios[y].cantidad_mensajes_usuario+=1
+                            bandera = True
+                    if bandera == False:
+                        objeto = usuario(x.correo)
+                        listaUsuarios.append(objeto)
+    names = []
+    values = []
+    for f in listaUsuarios:
+        names.append(f.correo)
+        values.append(f.cantidad_mensajes_usuario)
 
-    pass
+    plt.figure(figsize=(9, 3))
+
+    #plt.subplot(131)
+    plt.bar(names, values)
+
+    plt.suptitle('FFU')
+    plt.savefig('FFU.png')
+
+    return jsonify({
+        'message':'Excellent'
+    })
 
 @app.route('/FFC',methods=['POST'])
 def filtrar_por_fecha_y_codigo_de_error():
+    global listaEventos, listaFechas, eventoxfecha
 
+    fechaC = '20/04/2021'
 
-    pass
+    listaErrores = []
+    for fecha in eventoxfecha:
+        if fecha.fecha == fechaC:
+            for err in fecha.eventos:
+                flag = False
+                if len(listaErrores) == 0:
+                    objeto1 = error(err.codigo_error)
+                    listaErrores.append(objeto1)
+                else:
+                    for i in range(0, len(listaErrores)):
+                        if err.codigo_error == listaErrores[i].codigo_error:
+                            listaErrores[i].cantidad_veces_error += 1
+                            flag = True
+                    if flag == False:
+                        objeto1 = error(err.codigo_error)
+                        listaErrores.append(objeto1)
+    
+    names = []
+    values = []
+    for c in listaErrores:
+        names.append(c.codigo_error)
+        values.append(c.cantidad_veces_error)
 
-@app.route('/prueba', methods=['POST'])
-def prueba():
+    plt.figure(figsize=(9, 3))
 
+    #plt.subplot(131)
+    plt.bar(names, values)
 
+    plt.suptitle('FFC')
+    plt.savefig('FFC.png')
 
+    return jsonify({
+        'message':'Excellent'
+    })
 
-    pass
+@app.route('/reset')
+def reset():
+    global listaEventos, listaFechas, eventos_por_fecha, eventoxfecha, eventos, fechas
+
+    listaEventos.clear()
+    listaFechas.clear()
+    eventos_por_fecha.clear()
+    eventoxfecha.clear()
+    eventos.clear()
+    fechas.clear()
+
+    print(listaEventos)
+    print(listaFechas)
+    print(eventos_por_fecha)
+    print(eventoxfecha)
+    print(eventos)
+    print(fechas)
+
+    return jsonify({
+        'message':'Datos borrados'
+    })
 
 if __name__ == '__main__':
     app.run(threaded = True,port = 4000, debug = True)

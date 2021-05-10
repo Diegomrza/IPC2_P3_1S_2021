@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Principal</title>
+    <title>Filtrar por fecha y codigo de error</title>
 
     <style>
         * {
@@ -73,13 +73,6 @@
             /*background: #FFFFFF;*/
             border-radius: 1em;
         }
-        #entrada {
-            float: left;
-            width: 50%;
-            
-            height: 100%;
-            border-radius: 1em;
-        }
         #salida {
             float: right;
             width: 50%;
@@ -103,50 +96,56 @@
 
 </head>
 
-<body>
+<body onload="cargarfechas()">
     <div id='principal'>
         <div id="header">
-            <input style="float: left; margin-left: 300px; margin-top: 40px;" type="file" id="file">
 
-            <a href="index.html">
-                <button style="float: left; margin-top: 20px;">Peticiones</button>
-            </a>
-            
-            <button style="float: left; margin-top: 20px;">Ayuda</button>
+            <select style="font-size: large; margin-left: 500px; margin-top: 40px;" name="combo" id="combo">
+                
+            </select>
+
         </div>
         <div id="nav">
-            <!-- <form action="/enviar/" method="GET"> -->    
-                <!-- {% csrf_token %} --> 
-                <button onclick="enviar()" id="enviar">Enviar</button>
-            <!-- </form> --> 
             
-            <!-- <form action="/reset/"> --> 
-                <!--   {% csrf_token %}  -->
-                <button onclick="reset()" id="reset">Reset</button>
-            <!--   </form> -->
+            <button onclick="seleccion()" id="enviar">Filtrar</button>
+            
         </div>
         <div id="contenido">
-            <!-- <form action="/enviar/" method="GET"> -->
-                <!--  {% csrf_token %}  -->  
-                <div id="entrada">
-                    <h3>Entrada</h3>
-                    <textarea name="textArea1" id="textArea1" cols="70" rows="50"></textarea>
-                </div>
-                <div id="salida">
-                    <h3>Salida</h3>
-                    <textarea name="textArea2" id="textArea2" cols="70" rows="50"></textarea>
-                </div>
-            <!-- </form> -->
+            <div id="salida">
+                <h3>Salida</h3>
+                <img src="C:\Users\Squery\Documents\GitHub\IPC2_Proyecto3_201901429\FFC.PNG" alt="">
+            </div>
+            
         </div>
     </div>
     
     <script>
-        function enviar(){
-            var ruta = document.querySelector("#file").files[0].name; 
-            var objeto={
-                'ruta': ruta
+        function cargarfechas(){
+            fetch('http://127.0.0.1:4000/consultaFechas', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }).then(res => res.json())
+                .catch(error => {
+                })
+                .then(response => {
+                    console.log(response.valor)
+                    misFechas = response.valor
+                    comboFechas = document.querySelector('#combo')
+
+                    misFechas.forEach(fecha => {
+                        comboFechas.innerHTML += `<option>${fecha}</option>`
+                });
+            });
+        }
+
+        function seleccion(){
+            var opc = document.querySelector('#combo').value
+            objeto = {
+            'opcion':opc
             }
-            fetch('http://127.0.0.1:4000/ingreso', {
+            fetch('http://127.0.0.1:4000/FFC', {
                     method: 'POST',
                     body: JSON.stringify(objeto),
                     headers: {
@@ -156,43 +155,11 @@
                 .catch(error => {
                 })
                 .then(response => {
-                });
-            cargar()
-        }
-
-        function cargar(){
-            fetch('http://127.0.0.1:4000/consulta', {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-                }).then(res => res.json())
-                    .catch(error => {
-                    })
-                    .then(response => {
-                        console.log(response.valor)
-                        var area1 = document.querySelector('#textArea2')
-                        area1.innerHTML = response.valor
-                });
-        }
-
-        function reset(){
-            fetch('http://127.0.0.1:4000/reset', {
-                method: 'GET',
-                headers: {
-                        'Content-Type': 'application/json'
-                }
-            }).then(res => res.json())
-                .catch(error => {
-                })
-                .then(response => {
-                    console.log(response.valor)
-                    var area1 = document.querySelector('#textArea1')
-                    var area2 = document.querySelector('#textArea2')
-                    area1.innerHTML = ''
-                    area2.innerHTML = ''
+                   alert(response.message)
             });
+
         }
+        
 
     </script>
 
