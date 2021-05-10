@@ -270,7 +270,7 @@ def filtrar_info_por_fecha_y_usuario():
     plt.bar(names, values)
 
     plt.suptitle('FFU')
-    plt.savefig('FFU.png')
+    plt.savefig(r'C:\Users\Squery\Documents\GitHub\IPC2_Proyecto3_201901429\misitio\myapp\static\img\FFU.png')
 
     return jsonify({
         'message':'Excellent'
@@ -311,7 +311,7 @@ def filtrar_por_fecha_y_codigo_de_error():
     plt.bar(names, values)
 
     plt.suptitle('FFC')
-    plt.savefig('FFC.png')
+    plt.savefig(r'C:\Users\Squery\Documents\GitHub\IPC2_Proyecto3_201901429\misitio\myapp\static\img\FFC.png')
 
     return jsonify({
         'message':'Excellent'
