@@ -231,9 +231,7 @@ def consultar_datos():
     #return jsonify({'valor':xml})      
     #return xmltodict.parse(xml)
     #return xml
-    return jsonify({
-        'valor':xml
-        })
+    return jsonify({'valor':xml})
 
 @app.route('/FFU', methods=['POST'])
 def filtrar_info_por_fecha_y_usuario():

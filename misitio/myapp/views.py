@@ -1,6 +1,7 @@
 from django.shortcuts import render, HttpResponse
 import requests
 from .forms import prueba
+import webbrowser as wb
 
 endpoint = 'http://127.0.0.1:4000/'
 
@@ -33,4 +34,9 @@ def FFC(request):
 
 def reset(request):
     response2 = requests.get(endpoint+'prueba2')
+    return render(request, 'Frontal.html')
+
+def archivo(request):
+    wb.open_new(r'C:\Users\Squery\Documents\GitHub\IPC2_Proyecto3_201901429\Backend\Ensayo\FtoArticuloEnsayo-IPC2-lab.docx')
+
     return render(request, 'Frontal.html')
