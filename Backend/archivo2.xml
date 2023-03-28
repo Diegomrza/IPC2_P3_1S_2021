@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EVENTOS>
+    <EVENTO>
+        Panama, 30/11/2019
+        Reportado por: itadori099@ing.usac.gt
+        Usuarios afectados:  onami69@ing.usac.gt, itadori099@ing.usac.gt,  Zoro@ing.usac.gt, hacncock1000@ing.usac.gt, ino@ing.usac.gt,  levi_a@ing.usac.gt, noelle@ing.usac.gt
+        Error: 20003 - Sobrecarga de informacion
+    </EVENTO>
+    <EVENTO>
+        Panama, 16/12/2020
+        Reportado por:  dio@ing.usac.gt
+        Usuarios afectados:  muzan@ing.usac.gt, jojo@ing.usac.gt
+        Error: 20004 - Demasiados registros enviados
+    </EVENTO>
+    <EVENTO>
+        Guatemala, 11/02/2021
+        Reportado por: robin_@ing.usac.gt
+        Usuarios afectados:  dio@ing.usac.gt, goku@ing.usac.gt,  robin_@ing.usac.gt,  ino@ing.usac.gt,  itadori099@ing.usac.gt
+        Error: 20001 - Desbordamiento de bufer de memoria RAM
+    </EVENTO>
+    <EVENTO>
+        Guatemala, 01/06/2020
+        Reportado por:  ino@ing.usac.gt
+        Usuarios afectados:  Zoro@ing.usac.gt,  hacncock1000@ing.usac.gt,  armin@ing.usac.gt, robin_@ing.usac.gt, robin_@ing.usac.gt
+        Error: 20001 - Desbordamiento de bufer de memoria RAM
+    </EVENTO>
+    <EVENTO>
+        Mexico, 01/06/2020
+        Reportado por:  Zoro@ing.usac.gt
+        Usuarios afectados:  onami69@ing.usac.gt, dio@ing.usac.gt, hacncock1000@ing.usac.gt, ino@ing.usac.gt,  itadori099@ing.usac.gt, dio@ing.usac.gt, dio@ing.usac.gt
+        Error: 20005 - Medios equivocados
+    </EVENTO>
+    <EVENTO>
+        Panama, 09/08/2019
+        Reportado por:  dio@ing.usac.gt
+        Usuarios afectados: jojo@ing.usac.gt, dio@ing.usac.gt, goku@ing.usac.gt,  ino@ing.usac.gt
+        Error: 20007 - Error de servidor
+    </EVENTO>
+    <EVENTO>
+        Mexico, 15/04/2020
+        Reportado por: robin_@ing.usac.gt
+        Usuarios afectados:  robin_@ing.usac.gt,  armin@ing.usac.gt
+        Error: 20002 - Error de destino
+    </EVENTO>
+    <EVENTO>
+        Panama, 11/02/2021
+        Reportado por: goku@ing.usac.gt
+        Usuarios afectados:  goku@ing.usac.gt,  armin@ing.usac.gt, itadori099@ing.usac.gt, goku@ing.usac.gt, itadori099@ing.usac.gt, ino@ing.usac.gt
+        Error: 20006 - Peticion no reconocida
+    </EVENTO>
+    <EVENTO>
+        Mexico, 30/11/2019
+        Reportado por: itadori099@ing.usac.gt
+        Usuarios afectados: jojo@ing.usac.gt, goku@ing.usac.gt, muzan@ing.usac.gt,  goku@ing.usac.gt, onami69@ing.usac.gt, armin@ing.usac.gt,  onami69@ing.usac.gt, hacncock1000@ing.usac.gt
+        Error: 20001 - Desbordamiento de bufer de memoria RAM
+    </EVENTO>
+    <EVENTO>
+        Costa Rica, 11/02/2021
+        Reportado por:  itadori099@ing.usac.gt
+        Usuarios afectados:  ino@ing.usac.gt,  armin@ing.usac.gt,  Zoro@ing.usac.gt, robin_@ing.usac.gt, noelle@ing.usac.gt, noelle@ing.usac.gt, muzan@ing.usac.gt
+        Error: 20007 - Error de servidor
+    </EVENTO>
+    <EVENTO>
+        Guatemala, 30/11/2019
+        Reportado por: goku@ing.usac.gt
+        Usuarios afectados:  robin_@ing.usac.gt,  dio@ing.usac.gt,  onami69@ing.usac.gt, armin@ing.usac.gt, levi_a@ing.usac.gt,  ino@ing.usac.gt,  goku@ing.usac.gt
+        Error: 20006 - Peticion no reconocida
+    </EVENTO>
+    <EVENTO>
+        Panama, 11/02/2021
+        Reportado por: armin@ing.usac.gt
+        Usuarios afectados:  robin_@ing.usac.gt,  onami69@ing.usac.gt
+        Error: 20002 - Error de destino
+    </EVENTO>
+    <EVENTO>
+        Panama, 16/12/2020
+        Reportado por:  robin_@ing.usac.gt
+        Usuarios afectados: dio@ing.usac.gt, Zoro@ing.usac.gt, onami69@ing.usac.gt, itadori099@ing.usac.gt
+        Error: 20001 - Desbordamiento de bufer de memoria RAM
+    </EVENTO>
+    <EVENTO>
+        Costa Rica, 11/02/2021
+        Reportado por:  dio@ing.usac.gt
+        Usuarios afectados: Zoro@ing.usac.gt, muzan@ing.usac.gt,  hacncock1000@ing.usac.gt
+        Error: 20005 - Medios equivocados
+    </EVENTO>
+    <EVENTO>
+        Mexico, 16/12/2020
+        Reportado por: hacncock1000@ing.usac.gt
+        Usuarios afectados: muzan@ing.usac.gt, goku@ing.usac.gt, armin@ing.usac.gt
+        Error: 20008 - Lugar equivocado
+    </EVENTO>
+    <EVENTO>
+        USA, 20/04/2021
+        Reportado por: robin_@ing.usac.gt
+        Usuarios afectados:  ino@ing.usac.gt,  noelle@ing.usac.gt, ino@ing.usac.gt, onami69@ing.usac.gt, itadori099@ing.usac.gt, ino@ing.usac.gt, muzan@ing.usac.gt,  robin_@ing.usac.gt
+        Error: 20005 - Medios equivocados
+    </EVENTO>
+    <EVENTO>
+        Costa Rica, 09/08/2019
+        Reportado por: Zoro@ing.usac.gt
+        Usuarios afectados:  hacncock1000@ing.usac.gt, ino@ing.usac.gt,  goku@ing.usac.gt, hacncock1000@ing.usac.gt,  noelle@ing.usac.gt, hacncock1000@ing.usac.gt
+        Error: 20001 - Desbordamiento de bufer de memoria RAM
+    </EVENTO>
+    <EVENTO>
+        USA, 09/08/2019
+        Reportado por: levi_a@ing.usac.gt
+        Usuarios afectados: jojo@ing.usac.gt, goku@ing.usac.gt, armin@ing.usac.gt, dio@ing.usac.gt, armin@ing.usac.gt,  levi_a@ing.usac.gt, ino@ing.usac.gt,  Zoro@ing.usac.gt
+        Error: 20006 - Peticion no reconocida
+    </EVENTO>
+    <EVENTO>
+        USA, 15/04/2020
+        Reportado por: robin_@ing.usac.gt
+        Usuarios afectados: itadori099@ing.usac.gt,  dio@ing.usac.gt, dio@ing.usac.gt, itadori099@ing.usac.gt
+        Error: 20007 - Error de servidor
+    </EVENTO>
+    <EVENTO>
+        Guatemala, 16/12/2020
+        Reportado por:  Zoro@ing.usac.gt
+        Usuarios afectados:  itadori099@ing.usac.gt, dio@ing.usac.gt, itadori099@ing.usac.gt,  hacncock1000@ing.usac.gt,  onami69@ing.usac.gt
+        Error: 20007 - Error de servidor
+    </EVENTO>
+    <EVENTO>
+        USA, 23/09/2019
+        Reportado por: hacncock1000@ing.usac.gt
+        Usuarios afectados:  armin@ing.usac.gt, Zoro@ing.usac.gt,  ino@ing.usac.gt
+        Error: 20006 - Peticion no reconocida
+    </EVENTO>
+    <EVENTO>
+        USA, 23/09/2019
+        Reportado por: armin@ing.usac.gt
+        Usuarios afectados: muzan@ing.usac.gt,  goku@ing.usac.gt,  onami69@ing.usac.gt
+        Error: 20004 - Demasiados registros enviados
+    </EVENTO>
+    <EVENTO>
+        Costa Rica, 09/08/2019
+        Reportado por: robin_@ing.usac.gt
+        Usuarios afectados:  Zoro@ing.usac.gt,  noelle@ing.usac.gt, ino@ing.usac.gt, jojo@ing.usac.gt, robin_@ing.usac.gt, goku@ing.usac.gt, dio@ing.usac.gt
+        Error: 20002 - Error de destino
+    </EVENTO>
+    <EVENTO>
+        Mexico, 20/04/2021
+        Reportado por: muzan@ing.usac.gt
+        Usuarios afectados: onami69@ing.usac.gt, hacncock1000@ing.usac.gt, goku@ing.usac.gt, armin@ing.usac.gt, itadori099@ing.usac.gt, muzan@ing.usac.gt, goku@ing.usac.gt,  levi_a@ing.usac.gt
+        Error: 20006 - Peticion no reconocida
+    </EVENTO>
+    <EVENTO>
+        Panama, 11/02/2021
+        Reportado por:  itadori099@ing.usac.gt
+        Usuarios afectados:  levi_a@ing.usac.gt, robin_@ing.usac.gt, ino@ing.usac.gt, armin@ing.usac.gt
+        Error: 20002 - Error de destino
+    </EVENTO>
+    <EVENTO>
+        USA, 21/06/2020
+        Reportado por:  ino@ing.usac.gt
+        Usuarios afectados: Zoro@ing.usac.gt,  onami69@ing.usac.gt, ino@ing.usac.gt, itadori099@ing.usac.gt,  itadori099@ing.usac.gt,  jojo@ing.usac.gt, muzan@ing.usac.gt, muzan@ing.usac.gt
+        Error: 20004 - Demasiados registros enviados
+    </EVENTO>
+    <EVENTO>
+        Guatemala, 16/12/2020
+        Reportado por: Zoro@ing.usac.gt
+        Usuarios afectados: hacncock1000@ing.usac.gt, hacncock1000@ing.usac.gt,  itadori099@ing.usac.gt, goku@ing.usac.gt, levi_a@ing.usac.gt, hacncock1000@ing.usac.gt,  itadori099@ing.usac.gt
+        Error: 20006 - Peticion no reconocida
+    </EVENTO>
+    <EVENTO>
+        USA, 09/08/2019
+        Reportado por: Zoro@ing.usac.gt
+        Usuarios afectados: levi_a@ing.usac.gt, armin@ing.usac.gt, armin@ing.usac.gt, noelle@ing.usac.gt, goku@ing.usac.gt, itadori099@ing.usac.gt, armin@ing.usac.gt
+        Error: 20004 - Demasiados registros enviados
+    </EVENTO>
+    <EVENTO>
+        Costa Rica, 20/04/2021
+        Reportado por: noelle@ing.usac.gt
+        Usuarios afectados: onami69@ing.usac.gt, goku@ing.usac.gt, hacncock1000@ing.usac.gt, Zoro@ing.usac.gt,  ino@ing.usac.gt, jojo@ing.usac.gt
+        Error: 20002 - Error de destino
+    </EVENTO>
+    <EVENTO>
+        Mexico, 01/06/2020
+        Reportado por: jojo@ing.usac.gt
+        Usuarios afectados:  onami69@ing.usac.gt, hacncock1000@ing.usac.gt, robin_@ing.usac.gt
+        Error: 20008 - Lugar equivocado
+    </EVENTO>
+    <EVENTO>
+        USA, 16/12/2020
+        Reportado por: onami69@ing.usac.gt
+        Usuarios afectados: robin_@ing.usac.gt, armin@ing.usac.gt, Zoro@ing.usac.gt, goku@ing.usac.gt
+        Error: 20002 - Error de destino
+    </EVENTO>
+    <EVENTO>
+        Mexico, 16/12/2020
+        Reportado por: onami69@ing.usac.gt
+        Usuarios afectados: dio@ing.usac.gt, jojo@ing.usac.gt
+        Error: 20007 - Error de servidor
+    </EVENTO>
+    <EVENTO>
+        Mexico, 15/04/2020
+        Reportado por: dio@ing.usac.gt
+        Usuarios afectados: robin_@ing.usac.gt,  noelle@ing.usac.gt, robin_@ing.usac.gt
+        Error: 20001 - Desbordamiento de bufer de memoria RAM
+    </EVENTO>
+    <EVENTO>
+        USA, 21/06/2020
+        Reportado por:  onami69@ing.usac.gt
+        Usuarios afectados:  ino@ing.usac.gt,  goku@ing.usac.gt, jojo@ing.usac.gt, dio@ing.usac.gt
+        Error: 20006 - Peticion no reconocida
+    </EVENTO>
+    <EVENTO>
+        USA, 23/09/2019
+        Reportado por: robin_@ing.usac.gt
+        Usuarios afectados: ino@ing.usac.gt, levi_a@ing.usac.gt, noelle@ing.usac.gt, onami69@ing.usac.gt,  ino@ing.usac.gt,  goku@ing.usac.gt
+        Error: 20008 - Lugar equivocado
+    </EVENTO>
+    <EVENTO>
+        USA, 30/11/2019
+        Reportado por: jojo@ing.usac.gt
+        Usuarios afectados: muzan@ing.usac.gt, muzan@ing.usac.gt, robin_@ing.usac.gt,  robin_@ing.usac.gt, Zoro@ing.usac.gt
+        Error: 20007 - Error de servidor
+    </EVENTO>
+    <EVENTO>
+        Panama, 30/11/2019
+        Reportado por: dio@ing.usac.gt
+        Usuarios afectados: jojo@ing.usac.gt, levi_a@ing.usac.gt,  jojo@ing.usac.gt, levi_a@ing.usac.gt, onami69@ing.usac.gt, armin@ing.usac.gt
+        Error: 20005 - Medios equivocados
+    </EVENTO>
+    <EVENTO>
+        Guatemala, 11/02/2021
+        Reportado por:  itadori099@ing.usac.gt
+        Usuarios afectados: armin@ing.usac.gt, onami69@ing.usac.gt,  muzan@ing.usac.gt, itadori099@ing.usac.gt, onami69@ing.usac.gt
+        Error: 20006 - Peticion no reconocida
+    </EVENTO>
+    <EVENTO>
+        Costa Rica, 21/06/2020
+        Reportado por:  jojo@ing.usac.gt
+        Usuarios afectados: itadori099@ing.usac.gt, jojo@ing.usac.gt, armin@ing.usac.gt, hacncock1000@ing.usac.gt, noelle@ing.usac.gt
+        Error: 20008 - Lugar equivocado
+    </EVENTO>
+    <EVENTO>
+        Mexico, 01/06/2020
+        Reportado por: ino@ing.usac.gt
+        Usuarios afectados: muzan@ing.usac.gt, itadori099@ing.usac.gt, jojo@ing.usac.gt,  itadori099@ing.usac.gt, jojo@ing.usac.gt, robin_@ing.usac.gt
+        Error: 20007 - Error de servidor
+    </EVENTO>
+    <EVENTO>
+        Guatemala, 30/11/2019
+        Reportado por: goku@ing.usac.gt
+        Usuarios afectados: robin_@ing.usac.gt, ino@ing.usac.gt, muzan@ing.usac.gt, levi_a@ing.usac.gt, ino@ing.usac.gt, armin@ing.usac.gt, levi_a@ing.usac.gt
+        Error: 20006 - Peticion no reconocida
+    </EVENTO>
+    <EVENTO>
+        Mexico, 20/04/2021
+        Reportado por:  muzan@ing.usac.gt
+        Usuarios afectados:  armin@ing.usac.gt,  onami69@ing.usac.gt, Zoro@ing.usac.gt, robin_@ing.usac.gt
+        Error: 20007 - Error de servidor
+    </EVENTO>
+    <EVENTO>
+        Panama, 23/09/2019
+        Reportado por: muzan@ing.usac.gt
+        Usuarios afectados:  noelle@ing.usac.gt, Zoro@ing.usac.gt, jojo@ing.usac.gt
+        Error: 20003 - Sobrecarga de informacion
+    </EVENTO>
+    <EVENTO>
+        Guatemala, 20/04/2021
+        Reportado por: levi_a@ing.usac.gt
+        Usuarios afectados: onami69@ing.usac.gt,  dio@ing.usac.gt
+        Error: 20006 - Peticion no reconocida
+    </EVENTO>
+    <EVENTO>
+        USA, 16/12/2020
+        Reportado por:  ino@ing.usac.gt
+        Usuarios afectados:  onami69@ing.usac.gt,  noelle@ing.usac.gt,  levi_a@ing.usac.gt, itadori099@ing.usac.gt, levi_a@ing.usac.gt,  goku@ing.usac.gt,  muzan@ing.usac.gt, dio@ing.usac.gt
+        Error: 20003 - Sobrecarga de informacion
+    </EVENTO>
+    <EVENTO>
+        Guatemala, 11/02/2021
+        Reportado por:  muzan@ing.usac.gt
+        Usuarios afectados:  hacncock1000@ing.usac.gt, dio@ing.usac.gt, dio@ing.usac.gt
+        Error: 20006 - Peticion no reconocida
+    </EVENTO>
+    <EVENTO>
+        Panama, 20/04/2021
+        Reportado por: muzan@ing.usac.gt
+        Usuarios afectados: hacncock1000@ing.usac.gt,  levi_a@ing.usac.gt,  noelle@ing.usac.gt,  levi_a@ing.usac.gt,  jojo@ing.usac.gt,  hacncock1000@ing.usac.gt
+        Error: 20001 - Desbordamiento de bufer de memoria RAM
+    </EVENTO>
+    <EVENTO>
+        Costa Rica, 20/04/2021
+        Reportado por: itadori099@ing.usac.gt
+        Usuarios afectados: goku@ing.usac.gt, ino@ing.usac.gt,  hacncock1000@ing.usac.gt, onami69@ing.usac.gt
+        Error: 20003 - Sobrecarga de informacion
+    </EVENTO>
+    <EVENTO>
+        USA, 23/09/2019
+        Reportado por:  levi_a@ing.usac.gt
+        Usuarios afectados: ino@ing.usac.gt, jojo@ing.usac.gt, robin_@ing.usac.gt, goku@ing.usac.gt,  jojo@ing.usac.gt,  muzan@ing.usac.gt
+        Error: 20006 - Peticion no reconocida
+    </EVENTO>
+    <EVENTO>
+        Guatemala, 30/11/2019
+        Reportado por: onami69@ing.usac.gt
+        Usuarios afectados: jojo@ing.usac.gt, ino@ing.usac.gt, levi_a@ing.usac.gt,  levi_a@ing.usac.gt,  Zoro@ing.usac.gt, robin_@ing.usac.gt
+        Error: 20007 - Error de servidor
+    </EVENTO>
+</EVENTOS>
